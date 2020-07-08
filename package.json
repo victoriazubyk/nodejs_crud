@@ -1,0 +1,26 @@
+{
+  "name": "nodejs_crud-master",
+  "version": "1.0.0",
+  "description": "REST API on express.js, which simulates the operation of a simple model \"School\" with CRUD operations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb": "^18.2.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "core-util-is": "^1.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.2.2",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
