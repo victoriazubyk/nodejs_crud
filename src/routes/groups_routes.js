@@ -11,5 +11,5 @@ module.exports = app => {
   
     router.delete("/:id", groups.delete);
   
-    app.use('/api/groups', router);
+    app.use('/groups', router);
   };

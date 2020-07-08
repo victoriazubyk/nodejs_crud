@@ -11,5 +11,5 @@ module.exports = app => {
 
     router.delete("/:id", teachers.delete);
   
-    app.use('/api/teachers', router);
+    app.use('/teachers', router);
   };

@@ -1,4 +1,4 @@
-const db = require("../db");
+const db = require("../db/db.js");
 const Groups = db.groups;
 const Op = db.Sequelize.Op;
 

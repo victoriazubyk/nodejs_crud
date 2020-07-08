@@ -1,4 +1,4 @@
-const db = require("../db");
+const db = require("../db/db.js");
 const Teachers = db.teachers;
 const Op = db.Sequelize.Op;
 
