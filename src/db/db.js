@@ -24,4 +24,8 @@ db.lessons = require("../models/lessons.js")(sequelize, Sequelize);
 db.students = require("../models/students.js")(sequelize, Sequelize);
 db.teachers = require("../models/teachers.js")(sequelize, Sequelize);
 
+db.groups.hasMany(db.students);
+db.groups.hasMany(db.lessons);
+db.teachers.hasMany(db.lessons);
+
 module.exports = db;
