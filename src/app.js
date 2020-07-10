@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require("body-parser");
 const app = express();
-const token_autorization = require('./middlewares/token_autorization.js');
+const tokenAutorization = require('./middlewares/token_autorization.js');
 const dotenv = require('dotenv');
 dotenv.config({ path: "./config/.env" });
 
@@ -16,17 +16,17 @@ dotenv.config();
 
 app.set('view engine', 'ejs');
 
-const group_router = require("./routes/groups_routes");
-const lesson_router = require("./routes/lessons_routes");
-const student_router = require("./routes/students_routes");
-const teacher_router = require("./routes/teachers_routes");
-const auth_router = require("./routes/autorization");
+const groupRouter = require("./routes/groups_routes");
+const lessonRouter = require("./routes/lessons_routes");
+const studentRouter = require("./routes/students_routes");
+const teacherRouter = require("./routes/teachers_routes");
+const authRouter = require("./routes/autorization");
 
-app.use('/groups', token_autorization, group_router);
-app.use('/lessons', token_autorization, lesson_router);
-app.use('/students', token_autorization, student_router);
-app.use('/teachers', token_autorization, teacher_router);
-app.use('/auth', auth_router);
+app.use('/groups', tokenAutorization, groupRouter);
+app.use('/lessons', tokenAutorization, lessonRouter);
+app.use('/students', tokenAutorization, studentRouter);
+app.use('/teachers', tokenAutorization, teacherRouter);
+app.use('/auth', authRouter);
 
 app.listen(4200, () => {
     console.log("Server is runing on 4200 port");
