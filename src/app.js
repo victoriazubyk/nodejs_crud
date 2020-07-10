@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const app = express();
 const token_autorization = require('./middlewares/token_autorization.js');
+const dotenv = require('dotenv');
+dotenv.config({ path: "./config/.env" });
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -9,6 +11,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const db = require("./db/db.js");
 
 db.sequelize.sync();
+
+dotenv.config();
+
+app.set('view engine', 'ejs');
 
 const group_router = require("./routes/groups_routes");
 const lesson_router = require("./routes/lessons_routes");
